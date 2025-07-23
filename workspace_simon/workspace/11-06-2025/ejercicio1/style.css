@@ -1,0 +1,25 @@
+#div-margin {
+    background-color: lightblue;
+    margin: 40px;
+    padding: 10px;
+     border-style: solid;
+}
+
+#div-padding {
+    background-color: lightgreen;
+    padding: 30px;
+    margin: 10px;
+    border-style: solid;
+}
+
+#div-border {
+    background-color: lightcoral;
+    border: 5px solid rgb(0, 0, 0);
+    margin: 10px;
+    padding: 10px;
+    border-style: dotted;
+}
+
+
+
+

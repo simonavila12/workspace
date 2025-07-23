@@ -1,0 +1,408 @@
+
+
+									SIMON AVILA SERNA 
+
+_______________________________________________________________________________________________________________________________________________________________________
+
+https://github.com/HugoLeonardo-hub/Mr_Matematica.git
+Me agrado el diseño y la secuencia de numeros que conlleva, lo añadaria a la pagina tanto por su diseño, y como se explica cada tema.
+
+https://github.com/HernLG/paginadematematica.git
+Tiene un agradable diseño y imagenes que podriamos utlizar en la pagina y atraer a mas niños.
+
+https://github.com/alaanse/NitroMind2020.git
+Me gusto lo de añadir comentarios al final, como quejas o inconvenientes en la página
+
+Simon Avila
+30/04/2025
+_______________________________________________________________________________________________________________________________________________________________________
+										PREGUNTAS
+
+
+Que es http?
+R// HTTP (Hypertext Transfer Protocol) es un protocolo de comunicación que permite la transferencia de información en la World Wide Web. 
+Es el fundamento de cualquier intercambio de datos en la Web y define cómo se formatean y transmiten los mensajes, y qué acciones deben tomar los servidores y navegadores en respuesta a varios comandos. 
+HTTP funciona como un protocolo de solicitud-respuesta en el modelo cliente-servidor. 
+
+Características clave:
+
+-Es sin estado (stateless): cada solicitud es independiente
+-Permite transmitir diversos tipos de datos (HTML, imágenes, videos, etc.)
+-Utiliza principalmente los puertos 80 (HTTP) y 443 (HTTPS)
+-Tiene distintos métodos (GET, POST, PUT, DELETE, etc.) para diferentes operaciones
+
+Que hace el usuario cuando se loguea?
+R// Cuando un usuario inicia sesión, comienza accediendo a la página que contiene el formulario de autenticación. 
+Allí introduce sus credenciales, típicamente un nombre de usuario o correo electrónico y una contraseña. 
+Puede que también deba completar otros campos como captchas o códigos de verificación si el sistema utiliza autenticación de múltiples factores. 
+Al presionar el botón de inicio de sesión, el usuario envía esta información al servidor y espera mientras el sistema verifica si las credenciales son correctas. 
+Si la autenticación es exitosa, el usuario será redirigido a una página interna de la aplicación, generalmente un panel de control o página principal personalizada.
+
+Que es lo que pasa del lado del usuario?
+R// En el lado del cliente, el navegador web recopila la información ingresada en el formulario de login y la prepara para su envío. 
+Crea una solicitud HTTP, generalmente utilizando el método POST para mayor seguridad, y encapsula las credenciales en el cuerpo de esta solicitud. 
+El navegador puede aplicar validaciones básicas como verificar que los campos obligatorios estén completos antes del envío. Una vez enviada la solicitud, espera la respuesta del servidor. 
+Si la autenticación es exitosa, el navegador almacena información de sesión, habitualmente en forma de cookies o tokens JWT, que servirán para mantener al usuario identificado durante su navegación. 
+Con cada solicitud posterior a páginas protegidas, el navegador enviará automáticamente estos identificadores de sesión para demostrar que el usuario está autenticado.
+
+Que hace el servidor cuando un usuario se loguea?
+R//Cuando el servidor recibe una solicitud de inicio de sesión, primero extrae las credenciales del mensaje HTTP. 
+Luego busca en su base de datos si existe un usuario con el identificador proporcionado. 
+Si encuentra al usuario, verifica la contraseña suministrada comparándola con la versión almacenada, que normalmente está cifrada mediante técnicas de hash. 
+El servidor nunca compara contraseñas en texto plano por razones de seguridad. 
+Si la verificación es exitosa, el servidor determina los privilegios y roles asociados al usuario y crea una nueva sesión. 
+Esta sesión contiene información sobre el usuario autenticado y sus permisos dentro del sistema. 
+Finalmente, prepara una respuesta indicando el éxito de la operación y envía instrucciones al navegador sobre cómo proceder.
+
+Que es lo que pasa del lado del servidor?
+R//En el lado del servidor, el proceso de autenticación implica varios pasos técnicos detallados. 
+Al recibir la solicitud HTTP, el servidor decodifica los parámetros enviados y valida su formato. 
+Realiza consultas a la base de datos para recuperar la información del usuario incluyendo su contraseña hasheada y sal criptográfica si se utiliza. 
+Aplica algoritmos criptográficos para verificar que la contraseña proporcionada coincida con la almacenada. 
+Si la autenticación es correcta, el servidor genera identificadores de sesión únicos o tokens JWT con una fecha de expiración. 
+También puede registrar información sobre el inicio de sesión como la dirección IP, fecha, hora y dispositivo utilizado para propósitos de auditoría y seguridad. 
+Configura las cabeceras HTTP apropiadas en la respuesta, incluyendo cookies de sesión o tokens de autenticación. Adicionalmente, puede implementar medidas de seguridad como bloqueo temporal tras múltiples intentos fallidos o notificaciones por correo electrónico sobre inicios de sesión desde ubicaciones desconocidas.
+7/05/2525
+_____________________________________________________________________________________________________________________________________________________
+
+-Elementos de diagrama entidad relación
+R// Entidades: Rectángulos que representan objetos o conceptos (personas, cosas, eventos)
+Atributos: Óvalos conectados a entidades que describen sus características
+Relaciones: Diamantes que conectan entidades mostrando cómo interactúan
+Cardinalidad: Símbolos en las líneas que indican proporción de la relación (1:1, 1, N)
+
+-CONCEPTOS:
+ clave primaria,
+clave foranea,
+clave compuesta.
+R//Clave primaria: Es un atributo o conjunto de atributos que identifica de manera única cada registro en una tabla. 
+Actúa como el "DNI" de cada fila, garantizando que no existan duplicados. 
+No puede contener valores nulos y debe ser estable a lo largo del tiempo.
+
+Clave foránea: Es un atributo o conjunto de atributos en una tabla que hace referencia a la clave primaria de otra tabla. 
+Establece relaciones entre tablas y mantiene la integridad referencial. Por ejemplo, el "ID_cliente" en una tabla de pedidos que se refiere al "ID" en la tabla de clientes.
+
+Clave compuesta: Es una clave primaria que consta de dos o más atributos combinados para identificar de forma única cada registro. 
+Se utiliza cuando un solo campo no es suficiente para garantizar la unicidad. Por ejemplo, en una tabla de matriculaciones, la combinación de "ID_estudiante" e "ID_curso" podría formar una clave compuesta. 
+
+-Tipos de datos sql
+R//Numéricos
+
+INT/INTEGER: Números enteros (ej. 42, -7)
+SMALLINT: Enteros pequeños con menor rango
+BIGINT: Enteros con rango muy amplio
+DECIMAL/NUMERIC(p,s): Números exactos con precisión y escala definidas (ej. 123.45)
+FLOAT/REAL: Números de punto flotante (aproximados)
+DOUBLE PRECISION: Punto flotante de doble precisión
+
+Texto
+
+CHAR(n): Cadena de longitud fija (rellena con espacios)
+VARCHAR(n): Cadena de longitud variable hasta n caracteres
+TEXT: Texto de longitud variable (generalmente grande)
+
+Fecha y Hora
+
+DATE: Solo fecha (YYYY-MM-DD)
+TIME: Solo hora (HH:MM)
+DATETIME/TIMESTAMP: Fecha y hora combinadas
+INTERVAL: Periodo de tiempo
+
+Lógicos
+
+BOOLEAN: Valores verdadero/falso (TRUE/FALSE)
+
+Binarios
+
+BLOB/BINARY LARGE OBJECT: Datos binarios grandes (imágenes, archivos)
+BINARY/VARBINARY: Datos binarios de longitud fija o variable
+
+-Las 3 formas normales de bases de datos
+R// Primera Forma Normal (1FN): Se trata de eliminar los datos repetitivos y garantizar que cada celda contenga solo un valor atómico.
+ Piensa en ello como ordenar tu habitación: cada cosa debe tener su propio lugar específico, nada de meter varios objetos diferentes en un mismo cajón. 
+En lugar de tener una columna "teléfonos" con varios númeroendrías datos individuales y bien organizados.
+
+Segunda Forma Normal (2FN): Después de lograr la 1FN, aseguramos que todos los datos de la tabla estén relacionados completamente con la clave principal, no solo con una parte de ella.
+ Es como asegurarte de que cada libro en tu biblioteca esté clasificado por su ISBN completo, no solo por los primeros dígitos. 
+Evita situaciones donde algunos datos dependen solo de partes de tu identificador principal.
+
+Tercera Forma Normal (3FN): Una vez en 2FN, eliminamos las dependencias transitivas, es decir, cuando un campo depende de otro que no es la clave principal.
+Imagínalo como evitar intermediarios innecesarios: si quieres información sobre la ciudad de un cliente, esta debe depender directamente del ID del cliente (clave principal), no pasar primero por su código postal. 
+Cada dato no clave debe depender "del jefe" (la clave), no "de otro empleado".
+
+09/05/25
+__________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+Tipos de datos en mysql, dando una explicación
+R//INT: Números enteros estándar (-2 mil millones a +2 mil millones).
+TINYINT: Enteros pequeños (-128 a 127), ocupa menos espacio.
+SMALLINT: Enteros medianos (-32 mil a +32 mil).
+MEDIUMINT: Enteros intermedios (hasta ±8 millones).
+BIGINT: Enteros muy grandes (±9 trillones), para IDs de tablas extensas.
+FLOAT: Decimales de precisión simple, para cálculos donde la exactitud no es crítica.
+DOUBLE: Decimales de mayor precisión que FLOAT.
+DECIMAL: Decimales de precisión exacta, ideal para valores monetarios.
+CHAR: Texto de longitud fija (0-255 caracteres).
+VARCHAR: Texto de longitud variable (hasta 65,535 caracteres).
+TEXT: Almacena texto extenso (hasta 65,535 caracteres).
+MEDIUMTEXT: Texto más extenso (hasta 16MB).
+LONGTEXT: Texto muy extenso hasta 4GB.
+DATE: Sólo fecha (YYYY-MM-DD).
+TIME: Sólo hora (HH:MM:SS).
+DATETIME: Combina fecha y hora.
+TIMESTAMP: Como DATETIME pero con conversión de zona horaria.
+YEAR: Sólo el año en formato de 4 dígitos.
+BINARY: Datos binarios de longitud fija.
+VARBINARY: Datos binarios de longitud variable.
+BLOB: Objetos binarios (hasta 65KB).
+ENUM: Campo con un valor de lista predefinida.
+SET: Campo con múltiples valores de lista predefinida.
+JSON: Almacena y valida datos en formato JSON.
+
+listar los tipos de datos q van a usar en su proyecto
+
+R// INT: Para IDs y números enteros como intentos (ej. 5).
+DECIMAL: Para puntajes o respuestas con decimales (ej. 4.5).
+VARCHAR: Para nombres, correos, preguntas cortas, videos o imágenes (ej. "simon").
+TEXT: Para retroalimentación o textos largos (ej. comentarios).
+DATE: Para fechas como registro (ej. 2025-05-14).
+DATETIME: Para fechas y horas exactas (ej. 2025-05-14 15:43:00).
+BOOLEAN: Para estados verdadero/falso (ej. ejercicio completado).
+CHAR: Para textos fijos como roles (ej. "estudiante").
+
+14/05/25
+_______________________________________________________________________________________________________________________________________________________________________
+
+CREATE TABLE grupo ( id_grupo INT AUTO_INCREMENT PRIMARY KEY, nombre_grupo VARCHAR(100) NOT NULL );
+
+CREATE TABLE estudiante ( id_estudiante INT PRIMARY KEY, nombre VARCHAR(100) NOT NULL, apellido VARCHAR(100) NOT NULL, id_grupo INT, FOREIGN KEY (id_grupo)              REFERENCES grupo(id_grupo) );
+
+ CREATE TABLE salon ( id_salon INT PRIMARY KEY, numero VARCHAR(10) NOT NULL, ubicacion VARCHAR(100) );
+
+ CREATE TABLE aseo ( id_aseo INT AUTO_INCREMENT PRIMARY KEY, id_estudiante INT NOT NULL, id_salon INT NOT NULL, fecha DATE NOT NULL, rol VARCHAR(50) NOT              NULL, FOREIGN KEY (id_estudiante) REFERENCES estudiante(id_estudiante), FOREIGN KEY (id_salon) REFERENCES salon(id_salon) );
+
+
+    INSERT INTO grupo (nombre_grupo) VALUES ('sexto');
+    INSERT INTO grupo (nombre_grupo) VALUES ('septimo');
+    INSERT INTO grupo (nombre_grupo) VALUES ('octavo');
+    INSERT INTO grupo (nombre_grupo) VALUES ('noveno');
+
+    INSERT INTO estudiante (id_estudiante, nombre, apellido, id_grupo) VALUES (00, 'Sara', 'Liceth', 4);
+    INSERT INTO estudiante (id_estudiante, nombre, apellido, id_grupo) VALUES (11, 'Sarai', 'Munera', 4);
+    INSERT INTO estudiante (id_estudiante, nombre, apellido, id_grupo) VALUES (22, 'Ana', 'Gomez', 4);
+    INSERT INTO estudiante (id_estudiante, nombre, apellido, id_grupo) VALUES (33, 'Manuela', 'Rendon', 4);
+    INSERT INTO estudiante (id_estudiante, nombre, apellido, id_grupo) VALUES (44, 'Andres', 'Chavarriaga', 4);
+    INSERT INTO estudiante (id_estudiante, nombre, apellido, id_grupo) VALUES (55, 'Daniel', 'Fonseca', 3);
+    INSERT INTO estudiante (id_estudiante, nombre, apellido, id_grupo) VALUES (66, 'Andres', 'Cardenas', 3);
+    INSERT INTO estudiante (id_estudiante, nombre, apellido, id_grupo) VALUES (77, 'Santiago', 'Amariles', 3);
+    INSERT INTO estudiante (id_estudiante, nombre, apellido, id_grupo) VALUES (88, 'Angie', 'Rendon', 3);
+    INSERT INTO estudiante (id_estudiante, nombre, apellido, id_grupo) VALUES (99, 'Juan', 'Agudelo', 3);
+    INSERT INTO estudiante (id_estudiante, nombre, apellido, id_grupo) VALUES (12, 'Valentina', 'Giraldo', 2), (13, 'Thomas', 'Usuga', 2), (14, 'Juan', 'Duque', 2), (15, 'Daniela', 'Torres', 2),         (16, 'Miguel', 'Villa', 2), (17, 'Simon', 'Avila', 1), (18, 'Jeronimo', 'Arroyave', 1), (19, 'Juan', 'Salgado', 1), (20, 'Dylan', 'Ocampo', 1), (21, 'Johan', 'Vasquez', 1);
+
+    INSERT INTO salon (id_salon, numero, ubicacion) VALUES (1, '10-101', 'Bloque 10 primer piso'), (2, '10-201', 'Bloque 10 segundo piso'), (3, '23-401', 'Bloque 23 cuarto piso'), (4, '28        -401', 'Bloque 28 cuarto piso'), (5, '34-304', 'Bloque 34 tercer piso'), (6, '30-505', 'Bloque 30 quinto piso');
+
+21/05/2025
+______________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+
+3 formas de inclusión de estilos en HTML
+R// 1. Estilos en línea (Inline styles)
+Se aplican directamente en el elemento HTML usando el atributo style:
+html<p style="color: blue; font-size: 18px;">Este texto es azul y grande</p>
+
+2. Estilos internos (Internal styles)
+Se definen dentro del elemento <style> en la sección <head> del documento:
+html<head>
+    <style>
+        p {
+            color: red;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+3. Estilos externos (External styles)
+Se enlazan desde un archivo CSS externo usando el elemento <link>:
+html<head>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+que son direcciones relativas de archivo y como funcionan cuando se incluye una imagen o cualquier otro archivo al HTML
+
+R// Las direcciones relativas son rutas que se definen en relación con la ubicación del archivo HTML actual, no desde la raíz del sistema.
+Cómo funcionan:
+Estructura de ejemplo:
+proyecto/
+├── index.html
+├── imagenes/
+│   └── logo.png
+└── css/
+    └── estilos.css
+Tipos de rutas relativas:
+
+Mismo directorio: <img src="logo.png"> (si la imagen está en la misma carpeta)
+Subdirectorio: <img src="imagenes/logo.png"> (para acceder a una carpeta dentro)
+Directorio padre: <img src="../logo.png"> (usar ../ para subir un nivel)
+Múltiples niveles: <img src="../../imagenes/logo.png"> (subir dos niveles)
+
+Ventajas: Son portátiles y funcionan independientemente de dónde se ubique el proyecto.
+
+buscar que son elementos en bloque (block) y elementos en linea (inline en HTML
+R// Los elementos de bloque tienen las siguientes características:
+
+-Ocupan todo el espacio de su elemento padre (contenedor), creando así un "bloque" MDN Web DocsCaronte Studio
+-Siempre comienzan y terminan en su propia línea Web DevsPlatzi
+-Por defecto van a ocupar el ancho completo (el 100%) de su padre 
+-Aceptan propiedades de ancho, alto, padding y margin en todas las direcciones
+-Se apilan verticalmente uno encima de otro
+
+Ejemplos de elementos de bloque:
+
+<div>, <p>, <h1>-<h6>
+<ul>, <ol>, <li>
+<form>, <table>, <section>
+<header>, <footer>, <article>
+
+
+Los elementos en línea tienen estas propiedades:
+
+-Se mantienen en la misma línea a menos que se especifique un salto de línea 
+-Solo ocupan el espacio que necesitan para mostrar su contenido Elementos de bloque vs en línea en HTML
+-No aceptan propiedades de ancho y alto
+-Los márgenes y padding verticales no funcionan correctamente
+-Se alinean horizontalmente uno al lado del otro
+
+Ejemplos de elementos en línea:
+
+<span>, <a>, <strong>, <em>
+<img>, <input>, <button>
+<code>, <small>, <sub>, <sup>
+
+28/05/2025
+_______________________________________________________________________________________________________________________________________________________________________________________________
+
+Consultar que es el modelo de caja en CSS (BOXMODEL)
+    
+    Es el concepto que describe como se estructuran y muestran los elementos en una página HTML. Cada elemento es como una caja que consta de varias capas, tales capas son:
+
+    1. Contenido (content): El área donde se muestra el texto, imágenes o cualquier contenido del elemento.
+
+    2. Relleno (padding): Espacio entre el contenido y el borde. Es el relleno que tiene la caja de contenido.
+
+    3. Borde (border): La línea que rodea el padding y el contenido.
+
+    4. Margen (margin): El espacio externo que separa la caja de otros elementos alrededor.
+
+¿Qué sistemas de medida se usan en CSS?
+
+    Unidades absolutas: Son unidades fijas y no dependen del tamaño de la pantalla o del contenedor.
+
+        - px (píxeles): Unidad más común, representa un punto en la pantalla.
+
+        - pt (puntos): Usado en impresión, 1pt = 1/72 de pulgada.
+
+        - cm (centímetros): Medida física en centímetros.
+
+        - mm (milímetros): Medida física en milímetros.
+
+        - in (pulgadas): 1in = 2.54 cm.
+
+    Unidades relativas: Se adaptan según el contexto, lo que las hace muy útiles para diseños responsivos.
+
+        - % (porcentaje): Relativo al tamaño del elemento padre. Por ejemplo, width: 50% es la mitad del ancho del contenedor.
+
+        - em: Relativo al tamaño de fuente del elemento padre. Si el font-size del padre es 16px, entonces 1em = 16px.
+
+        - rem: Relativo al tamaño de fuente raíz (<html>). Es muy útil para mantener consistencia en todo el documento.
+
+        - vw (viewport width): 1vw = 1% del ancho de la ventana del navegador.
+
+        - vh (viewport height): 1vh = 1% de la altura de la ventana del navegador.
+
+        - vmin: El menor valor entre vw y vh.
+
+        - vmax: El mayor valor entre vw y vh.
+
+    Otros
+
+        - ch: Ancho del carácter "0" en la fuente actual, útil para layouts basados en texto.
+
+        - ex: Altura de la letra "x" en la fuente actual.
+
+6/06/2025
+________________________________________________________________________________________________________________________________________________________
+
+¿que es diseño responsivo?
+R// es una técnica de desarrollo web que permite que un sitio o aplicación se adapte automáticamente al tamaño de pantalla del dispositivo desde el que se accede: computadora, tablet, celular, etc.
+Esto se logra usando reglas de CSS (como media queries, porcentajes, unidades flexibles) para reorganizar o escalar el contenido sin necesidad de hacer varios sitios diferentes.
+
+¿que es un grid en diseño responsivo?
+R//Un grid (rejilla) es un sistema de diseño basado en filas y columnas. En CSS, el sistema CSS Grid Layout permite organizar elementos en un layout (estructura) adaptable y ordenado.
+
+En diseño responsivo:
+
+Se usa grid para posicionar contenido (como cajas, tarjetas, menús).
+
+Puedes hacer que una misma estructura cambie de forma en pantallas pequeñas o grandes.
+
+ Ejemplo básico: .
+grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; 
+}
+
+¿que dispositivos se deben de tener en cuenta en diseño responsivo?
+R//Debes considerar los dispositivos más comunes y sus tamaños de pantalla:
+
+📱 Teléfonos móviles (320px a 600px de ancho)
+
+📱 Tablets (600px a 900px)
+
+💻 Laptops / notebooks (900px a 1280px)
+
+🖥️ Computadoras de escritorio (1280px en adelante)
+
+🖥️ Pantallas 4K o ultrawide, si aplica
+
+¿aplica el diseño responsivo según en navegador?
+R// En general, el diseño responsivo depende más del tamaño de pantalla que del navegador, pero:
+Algunos navegadores antiguos no soportan completamente herramientas modernas como Grid o Flexbox.
+Cada navegador puede interpretar márgenes, fuentes o tamaños ligeramente distinto.
+
+¿que es flexbox en diseño responsivo?
+R//Flexbox (Flexible Box) es una técnica de CSS que permite organizar elementos en una fila o columna, adaptando el espacio automáticamente.
+
+Es muy útil en diseño responsivo porque:
+
+Se adapta fácilmente al tamaño del contenedor
+
+Permite alinear, distribuir y reordenar elementos
+
+Es más fácil que usar floats o tablas
+
+Ejemplo: 
+.contenedor {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+Esto permite que los elementos:
+
+Se distribuyan en línea
+
+Pasen a una nueva línea si no caben
+
+Se alineen al centro, derecha o izquierda fácilmente
+
+11/07/2025
+______________________________________________________________________________________________________________________________________________________________________________________________
+
+
+
+
+
+
+
+
+

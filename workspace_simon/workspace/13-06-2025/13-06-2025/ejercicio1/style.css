@@ -1,0 +1,48 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #7eec4b;
+}
+
+.calendar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+.month {
+    display: inline-block;
+    width: 30%;
+    height: 20%;
+    background-color: #ffcccb;
+    border-radius: 10px;
+    text-align: center;
+    padding: 15px;
+    margin: 10px;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+}
+
+.month:nth-child(even) {
+    background-color: #f0e68c; 
+}
+
+.month:hover {
+    background-color: #ffeb3b;
+}
+
+.month h2 {
+    font-size: 1.5em;
+    color: #333;
+}
+
+.month p {
+    font-size: 1.1em;
+    color: #555;
+}
+h1 {
+    text-align: center; 
+}
