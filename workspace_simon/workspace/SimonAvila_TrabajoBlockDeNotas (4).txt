@@ -398,11 +398,31 @@ Se alineen al centro, derecha o izquierda fácilmente
 11/07/2025
 ______________________________________________________________________________________________________________________________________________________________________________________________
 
+-¿que es un framework css en diseño web?
+-¿que es bootstrap en diseño web?
+-identificar 2 sitios hechos con bootstrap, listarlos e inspeccionar la linea de código
+donde es claro q estos sitios usan bootstrap
+
+SOLUCIÓN
+1- ¿Qué es un framework CSS en diseño web?
+Un framework CSS es una biblioteca preescrita de código CSS que proporciona una base estructurada y estandarizada para el desarrollo web. Incluye componentes reutilizables, sistemas de grillas, utilidades de diseño y estilos predefinidos que permiten a los desarrolladores crear sitios web de manera más rápida y consistente.
+Los frameworks CSS ofrecen ventajas como la aceleración del desarrollo, consistencia visual, responsividad automática y mejores prácticas de código. Algunos ejemplos populares son Bootstrap, Tailwind CSS, Foundation y Bulma.
+
+2-¿Qué es Bootstrap en diseño web?
+Bootstrap es uno de los frameworks CSS más populares y ampliamente utilizados. Fue desarrollado originalmente por Twitter y es de código abierto. Proporciona un sistema de grillas flexibles, componentes prediseñados (botones, formularios, navegación, modales), utilidades CSS y plugins de JavaScript.
+Bootstrap se caracteriza por su enfoque "mobile-first", lo que significa que está diseñado primero para dispositivos móviles y luego se adapta a pantallas más grandes. Utiliza un sistema de 12 columnas para crear layouts responsivos y ofrece clases CSS predefinidas que facilitan el desarrollo rápido de interfaces web modernas.
 
 
+https://www.wappalyzer.com/technologies/ui-frameworks/bootstrap/
+.v-application .mt-n3 {		bootstrap/:6
+    margin-top: -12px !important;
+}
 
 
+https://bootstrapbrain.com/bootstrap-websites/#google_vignette
 
+la pagina fue realizada con un archivo (bootstrap-websites/)
+30/07/2025
 
 
 
