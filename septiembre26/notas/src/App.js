@@ -1,7 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
 import Lista from './Lista';
 import Footer from './Footer';
+import Header from './Header';
+import Inicio from './Inicio';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   let estudiantes = [
@@ -10,10 +12,18 @@ function App() {
     {nombre: "megamente", apellido: "Ospina"},
   ];
   return (
-    <div className="App">
+    <BrowserRouter>
+      <div className="App">
+      <Header />
+      <Routes>
+        <Route path='/' element={<Inicio />} />
+        <Route path='/estudiantes' element={<Lista listaestudiantes={estudiantes} />} />
+       </Routes>
       <Lista listaestudiantes={estudiantes} />
       <Footer />
     </div>
+    </BrowserRouter>
+  
   );
 }
 
